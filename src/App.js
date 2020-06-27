@@ -3,18 +3,18 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import { GRAPHQL_API_ROOT, customHistory } from "./constants";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row } from "react-bootstrap";
 
-import { UserContainer } from "./containers/UserContainer";
+import { UsersContainer } from "./containers/UsersContainer";
 import { Login } from "./components/login";
 
 function App() {
   const client = new ApolloClient({
-    uri: "http://localhost:8080/v1/graphql",
+    uri: GRAPHQL_API_ROOT,
   });
-  const customHistory = createBrowserHistory();
 
   return (
     <div className="App">
@@ -31,7 +31,7 @@ function App() {
               </Container>
             </Route>
           </Switch>
-          {/* <UserContainer /> */}
+          <UsersContainer />
         </Router>
       </ApolloProvider>
     </div>
