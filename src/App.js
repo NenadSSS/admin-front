@@ -23,15 +23,17 @@ function App() {
           <h4>Admin app</h4>
           <br />
           <Switch>
-            <Route path="/">
+            <Route path="/" exact={true}>
               <Container>
                 <Row className="justify-content-md-center">
                   <Login />
                 </Row>
               </Container>
             </Route>
+            <Route path="/home" exact={true}>
+              <UsersContainer />
+            </Route>
           </Switch>
-          <UsersContainer />
         </Router>
       </ApolloProvider>
     </div>
