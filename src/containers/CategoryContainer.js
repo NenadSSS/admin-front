@@ -11,7 +11,7 @@ const CategoryContainer = ({ categoryId }) => {
   
   return (
     <p>
-      {category.category_name} with id: {categoryId}
+      Category: {category.category_name} with id: {categoryId}
     </p>
   );
 };

@@ -12,7 +12,7 @@ export function UsersContainer() {
       <Row className="justify-content-md-center">
         {" "}
         <ListGroup variant="flush">
-          <h4>All users</h4>
+          <h5>All users</h5>
           {users &&
             users.map((user) => (
               <User
