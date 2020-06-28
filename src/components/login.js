@@ -30,7 +30,7 @@ export const Login = () => {
               value={email}
             />
             <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
+              Make sure you enter a valid -email
             </Form.Text>
           </Form.Group>
 

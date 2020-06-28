@@ -1,8 +1,6 @@
 import React from "react";
 import { ListGroup } from "react-bootstrap";
 import CategoryContainer from "./CategoryContainer";
-// import { useQuery } from "@apollo/react-hooks";
-// import { GET_SINGLE_USER } from "../graphql/get-single-user";
 
 export default function UserContainer({
   userId,
@@ -11,10 +9,6 @@ export default function UserContainer({
   categoryId,
   email,
 }) {
-  // const data = useQuery(GET_SINGLE_USER, {
-  //   variables: { id: userId },
-  // });
-
   return (
     <ListGroup.Item>
       {" "}
