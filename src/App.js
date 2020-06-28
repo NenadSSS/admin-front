@@ -1,20 +1,13 @@
 import React from "react";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from "react-router-dom";
+import { Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import { useLocalStorage } from "@rehooks/local-storage";
 import { GRAPHQL_API_ROOT, customHistory } from "./constants";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row } from "react-bootstrap";
 import { UsersContainer } from "./containers/UsersContainer";
-import { Login } from "./components/login";
+import { Login } from "./components/Login";
 
 function App() {
   const client = new ApolloClient({
@@ -30,15 +23,7 @@ function App() {
           <br />
           <Switch>
             <Route path="/" exact={true}>
-              {user ? (
-                <Redirect to="/home" />
-              ) : (
-                <Container>
-                  <Row className="justify-content-md-center">
-                    <Login />
-                  </Row>
-                </Container>
-              )}
+              {user ? <Redirect to="/home" /> : <Login />}
             </Route>
             <Route path="/home">
               {user ? (

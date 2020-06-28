@@ -35,6 +35,7 @@ export const Login = () => {
           </Form.Group>
 
           <Button
+            variant={userIsValid ? "success" : "primary"}
             disabled={email.length < 5}
             onClick={() => {
               if (userIsValid) {

@@ -8,6 +8,7 @@ export const GET_ALL_USERS = gql`
       age
       first_name
       last_name
+      email
     }
   }
 `;
