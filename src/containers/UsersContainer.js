@@ -1,12 +1,23 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
-import { Container, Row, ListGroup } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+
+import { Container, Row, ListGroup, Button } from "react-bootstrap";
+import { deleteFromStorage } from "@rehooks/local-storage";
 
 import { GET_ALL_USERS } from "../graphql/get-all-users";
 import User from "./User";
 
 export function UsersContainer() {
+  const history = useHistory();
+
   const { data: { users = [] } = {} } = useQuery(GET_ALL_USERS);
+
+  const logOut = () => {
+    deleteFromStorage("userEmail");
+    history.push("/");
+  };
+
   return (
     <Container>
       <Row className="justify-content-md-center">
@@ -26,6 +37,14 @@ export function UsersContainer() {
             ))}
         </ListGroup>
       </Row>
+      <Button
+        onClick={() => {
+          logOut();
+        }}
+        variant="secondary"
+      >
+        Log out
+      </Button>
     </Container>
   );
 }
